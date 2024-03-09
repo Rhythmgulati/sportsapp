@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="playerstyle.css">
+</head>
+<body>
+         <header>
+            <h1>Logo</h1>
+            <button onclick="showTeam()">Create Team</button>
+    </header>
+     <main>
+        <h2>Players nearby..</h2>
+        <div class="container">
+            {{#each players}}
+            <div class="card">
+             {{!-- <div class="imgcont"><img src="{{image}}" alt=""></div> --}}
+             <h2>{{name}}</h2>
+             <p>Sport:{{sports}}</p>
+             <p>Location:{{location}}</p>
+             <p></p>
+             <button>Chatnow</button>
+            </div>
+            {{/each}}
+        </div>
+     </main>
+   
+</body>
+</html>

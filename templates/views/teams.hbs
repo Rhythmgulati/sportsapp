@@ -5,22 +5,50 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="teamstyle.css">
+    
 </head>
 <body>
      <header>
             <h1>Logo</h1>
-            <a href="/createteam"><button>Create Team</button></a>
+            <button onclick="showTeam()">Create Team</button>
     </header>
      <main>
         <h2>Teams nearby..</h2>
         <div class="container">
+            {{#each teams}}
             <div class="card">
-
+             <div class="imgcont"><img src="{{image}}" alt=""></div>
+             <h2>{{name}}</h2>
+             <p>Sport:{{sports}}</p>
+             <p>Phno:{{phoneno}}</p>
             </div>
-             <div class="card">
-
-            </div>
+            {{/each}}
         </div>
      </main>
+     <div class="container team-form">
+        <h1>Team Registration</h1>
+        <form class="teamform" action="/addteam" method="post">
+        <input type="text" name="image" placeholder="IMAGE URL">
+        <input type="text" name="teamname" id="name" placeholder="Name" required>
+            <input type="text" name="sports" id="sports" placeholder="Sports Interests (comma-separated)" required>
+            <input type="text"name="location" id="location" placeholder="Location" required>
+            <input type="number" name="phoneno" id="phoneno" placeholder="Phoneno" required>
+            <button type="submit" class="register-btn" onclick="showregister()">Register</button>
+            <button class="close-btn" onclick="hideform()">X</button>
+            <p class="message">{{message}}</p>
+        </form>
+    </div>
+    <script>
+        const teamform  = document.querySelector(".team-form")
+
+    function showTeam(){
+    teamform.classList.add("display");
+    console.log("clicked hai jii");
+    };
+     function hideform(){
+    teamform.classList.remove("display");
+    };
+    </script>
+    {{!-- <script src="../../public/addteam.js"></script> --}}
 </body>
 </html>

@@ -1,6 +1,7 @@
 const express = require('express');
 require("../db/conn");
 const user = require("../db/models/user");
+const team = require("../db/models/team");
 const path = require("path");
 const app = express();
 const bcrypt = require("bcrypt");
@@ -62,7 +63,7 @@ app.post("/login",async (req,res)=>{
       existinguser.tokens.push(token);
       await existinguser.save();
       
-      res.status(201).redirect("homepage",);
+      res.status(201).redirect("homepage");
       
     } catch (error) {
       console.log(error);
@@ -71,7 +72,40 @@ app.post("/login",async (req,res)=>{
 app.get("/homepage",(req,res)=>{
     res.render("homepage");
 })
-app.get("/teams",(req,res)=>{
-    res.render("teams");
+app.post("/addteam",async (req,res)=>{
+   try {
+    console.log(req.body);
+    const{image,teamname,sports,location,phoneno}=req.body;
+    const newteam = new team({
+    image,
+     name:teamname,
+     sports,
+     location,
+     phoneno
+    });
+    await newteam.save();
+     res.status(201).redirect("/teams");
+   } catch (error) {
+    res.status(500),send("internal server error");
+   }
+});
+
+app.get("/teams",async (req,res)=>{
+    try {
+        const teams = await team.find();
+    console.log(teams);
+    res.render("teams",{teams});
+    } catch (error) {
+        res.status(500).send("internal server error");
+    }
+});
+
+app.get("/players",async (req,res)=>{
+  try {
+    const players = await user.find();
+    res.render("players",{players})
+  } catch (error) {
+    res.status(500).send("internal server error");
+  }
 })
 app.listen(PORT,()=>{console.log(`LISTENING TO PORT: ${PORT}`);});
