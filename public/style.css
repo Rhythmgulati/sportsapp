@@ -1,0 +1,113 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    text-align: center;
+}
+
+.hero-section{
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items: center;
+}
+.hero-section h1{
+    font-size: 5cqmax;
+}
+.hero-section h1:nth-child(2){
+    color: red;
+}
+.hero-section button{
+    width: 100px;
+    margin-top: 20px;
+    padding: 10px;
+    border-radius: 3px;
+    outline: none;
+    border: none;
+    color: white;
+    background-color: rgba(255, 0, 0, 0.433);
+    font-weight: 600;
+}
+
+header{
+    display: flex;
+    height: 10vh;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 30px;
+ }
+ .login-btn{
+     padding:5px 10px;
+     border: none;
+     border-radius: 3px;
+    background-color: rgba(255, 0, 0, 0.682);
+    font-size: 15px;
+    font-weight: 600;
+    color: white;
+ }
+ 
+ .register-form , .login-form{
+    display: none;
+    position: absolute;
+    top: 20%;
+    height: 400px;
+    width: 400px;
+    left: 50%;
+    transform: translate(-50%);
+    background-color: whitesmoke;
+    border-radius: 10px;
+ }
+
+ .login-form{
+    height: 300px;
+    top: 30%;
+    display: none;
+ }
+
+ .display{
+  display: block;
+}
+.close-btn{
+    border-radius: 50%;
+    margin-top: 10px;
+}
+
+form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    input[type="email"],
+    input[type="password"],
+    input[type="text"] {
+        width: 90%;
+        padding: 10px;
+        margin: 5px 0;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+    
+   .register-btn , .login-button {
+        padding: 10px 20px;
+        margin-top: 10px;
+        background-color: #da1717;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    
+    button:hover {
+        background-color: #00b306;
+    }
+    
+    .container {
+        width: 50%;
+        margin: 20px auto;
+    }
+

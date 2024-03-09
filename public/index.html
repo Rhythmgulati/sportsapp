@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sports App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>    
+        <header>
+            <h1>Logo</h1>
+            <button class='login-btn' onclick="showlogin()">Log-in</button>
+           </header>
+        <div class="hero-section">
+        <h1>JOIN THE SPORTS COMMUNITY</h1>
+        <h1>Skinder</h1>
+        <h2>Build your team || Connect with other players</h2>
+        <button class="register-btn" onclick="showregister()">Sign-in</button> 
+        </div>
+       </div>
+     
+    <div class="container register-form">
+        <h1>User Registration</h1>
+        <form id="registrationForm">
+            <input type="email" id="email" placeholder="Email" required>
+            <input type="password" id="password" placeholder="Password" required>
+            <input type="text" id="sportsInterests" placeholder="Sports Interests (comma-separated)" required>
+            <input type="text" id="skillLevel" placeholder="Skill Level" required>
+            <input type="text" id="location" placeholder="Location" required>
+            <button type="submit" class="register-btn" onclick="showregister()">Register</button>
+            <button class="close-btn" onclick="hideform()">X</button>
+        </form>
+    </div>
+
+    <div class="login-form">
+        <h1>Login</h1>
+        <form class="loginForm">
+            <input type="email" id="email" placeholder="Email" required>
+            <input type="password" id="password" placeholder="Password" required>
+            <button type="submit" class="login-btn" onclick="">Login</button>
+            <button class="close-btn" onclick="hideform()">X</button>
+        </form>
+    </div>
+<!-- 
+    <div class="container">
+        <h1>Search Users</h1>
+        <form id="searchForm">
+            <input type="text" id="searchLocation" placeholder="Location" required>
+            <input type="text" id="searchSportsInterests" placeholder="Sports Interests" required>
+            <button type="submit">Search</button>
+        </form>
+        <div id="searchResults"></div>
+    </div> -->
+
+    <script src="script.js"></script>
+</body>
+</html>
