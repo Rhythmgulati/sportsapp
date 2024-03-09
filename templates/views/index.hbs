@@ -21,24 +21,26 @@
      
     <div class="container register-form">
         <h1>User Registration</h1>
-        <form id="registrationForm">
-            <input type="email" id="email" placeholder="Email" required>
-            <input type="password" id="password" placeholder="Password" required>
-            <input type="text" id="sportsInterests" placeholder="Sports Interests (comma-separated)" required>
-            <input type="text" id="skillLevel" placeholder="Skill Level" required>
-            <input type="text" id="location" placeholder="Location" required>
+        <form class="registrationForm" action="/register" method="post">
+        <input type="text" name="username" id="name" placeholder="Name" required>
+        <input type="number" name="age" id="age" placeholder="AGE" required>
+            <input type="email"  name="email" id="email" placeholder="Email" required>
+            <input type="password" name="password" id="password" placeholder="Password" required>
+            <input type="text" name="sports" id="sports" placeholder="Sports Interests (comma-separated)" required>
+            <input type="text"name="location" id="location" placeholder="Location" required>
             <button type="submit" class="register-btn" onclick="showregister()">Register</button>
             <button class="close-btn" onclick="hideform()">X</button>
+            <p class="message">{{message}}</p>
         </form>
     </div>
 
     <div class="login-form">
         <h1>Login</h1>
-        <form class="loginForm">
-            <input type="email" id="email" placeholder="Email" required>
-            <input type="password" id="password" placeholder="Password" required>
+        <form class="loginForm" action="/login" method="POST">
+            <input type="email" name="email" id="email" placeholder="Email" required>
+            <input type="password" name="password" id="password" placeholder="Password" required>
             <button type="submit" class="login-btn" onclick="">Login</button>
-            <button class="close-btn" onclick="hideform()">X</button>
+            <button class="close-btn"  onclick="hideform()">X</button>
         </form>
     </div>
 <!-- 
@@ -51,7 +53,8 @@
         </form>
         <div id="searchResults"></div>
     </div> -->
-
+    
+    <script src="../../server/app.js"></script>
     <script src="script.js"></script>
 </body>
 </html>

@@ -1,7 +1,8 @@
-body {
+*{
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
+    transition: all .4s ease-in ;
 }
 
 h1 {
@@ -14,6 +15,7 @@ h1 {
     flex-direction: column;
     justify-content:center;
     align-items: center;
+    gap: 10px;
 }
 .hero-section h1{
     font-size: 5cqmax;
@@ -54,18 +56,20 @@ header{
     display: none;
     position: absolute;
     top: 20%;
-    height: 400px;
+    height: 500px;
     width: 400px;
     left: 50%;
     transform: translate(-50%);
     background-color: whitesmoke;
     border-radius: 10px;
+    
  }
 
  .login-form{
     height: 300px;
     top: 30%;
     display: none;
+
  }
 
  .display{
@@ -81,10 +85,10 @@ form {
         flex-direction: column;
         align-items: center;
     }
-    
     input[type="email"],
     input[type="password"],
-    input[type="text"] {
+    input[type="text"] ,
+    input[type='number']{
         width: 90%;
         padding: 10px;
         margin: 5px 0;
@@ -92,6 +96,9 @@ form {
         border-radius: 5px;
     }
     
+.register-form h1 , .login-form h1{
+    margin: 20px 0;
+}
    .register-btn , .login-button {
         padding: 10px 20px;
         margin-top: 10px;
